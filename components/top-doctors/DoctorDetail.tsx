@@ -6,6 +6,7 @@ const Profile = () => {
   return (
     <View className="bg-white p-4 rounded-xl shadow mb-4">
       <DoctorsCard
+      imageIndex={0}
         name="Dr. Rishi"
         profession="Cardiologist"
         startRating={4.7}

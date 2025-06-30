@@ -3,16 +3,16 @@ import { Ionicons } from '@expo/vector-icons';
 
 // Preload doctor images
 const doctorImages = [
-  require('@/assets/images/doctors1.png'),
-  require('@/assets/images/doctors2.png'),
-  require('@/assets/images/doctors3.png'),
-  require('@/assets/images/doctors4.png'),
+  require('@/assets/images/doctors/doctor1.png'),
+  require('@/assets/images/doctors/doctor2.png'),
+  require('@/assets/images/doctors/doctor3.png'),
+  require('@/assets/images/doctors/doctor4.png'),
 ];
 
 type DoctorsCardProps = {
   imageIndex: number;
   name: string;
-  startRating: number;
+  startRating:anumber;
   profession: string;
   distance: number;
 };
