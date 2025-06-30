@@ -1,31 +1,49 @@
-import { View, Text, TextInput, Pressable } from 'react-native';
-import React from 'react';
-import { Link } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
+import { Link, useRouter } from 'expo-router';
+import React from 'react';
+import { Pressable, Text, TextInput, View } from 'react-native';
 
 type AuthFormProps = {
   auth_type: 'sign_up' | 'sign_in';
 };
 
 function AuthForm({ auth_type }: AuthFormProps) {
+  const router = useRouter();
+
+  const handleAuthSubmit = () => {
+    // Dummy logic: just navigate to dashboard
+    router.replace('/(drawer)/(tabs)/home' as const);
+  };
+
   return (
     <View className="flex-1 justify-center px-6 bg-white">
       <View className="space-y-4">
-        <TextInput
-          placeholder="Enter your name"
-          className="border border-gray-300 rounded-lg px-4 py-3"
-        />
-        <TextInput
-          placeholder="Enter your email"
-          keyboardType="email-address"
-          autoCapitalize="none"
-          className="border border-gray-300 rounded-lg px-4 py-3"
-        />
-        <TextInput
-          placeholder="Enter your password"
-          secureTextEntry
-          className="border border-gray-300 rounded-lg px-4 py-3"
-        />
+        {auth_type === 'sign_up' && (
+          <View className="flex-row items-center border border-gray-300 rounded-lg px-4">
+            <FontAwesome name="user" size={16} color="gray" className="mr-2" />
+            <TextInput
+              placeholder="Enter your name"
+              className="flex-1 py-3"
+            />
+          </View>
+        )}
+        <View className="flex-row items-center border border-gray-300 rounded-lg px-4">
+          <FontAwesome name="envelope" size={16} color="gray" className="mr-2" />
+          <TextInput
+            placeholder="Enter your email"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            className="flex-1 py-3"
+          />
+        </View>
+        <View className="flex-row items-center border border-gray-300 rounded-lg px-4">
+          <FontAwesome name="lock" size={16} color="gray" className="mr-2" />
+          <TextInput
+            placeholder="Enter your password"
+            secureTextEntry
+            className="flex-1 py-3"
+          />
+        </View>
       </View>
 
       <View className="my-6">
@@ -57,7 +75,10 @@ function AuthForm({ auth_type }: AuthFormProps) {
         </Pressable>
       </View>
 
-      <Pressable className="bg-primary mt-8 py-3 rounded-full items-center">
+      <Pressable
+        className="bg-primary mt-8 py-3 rounded-full items-center"
+        onPress={handleAuthSubmit}
+      >
         <Text className="text-white font-semibold">
           {auth_type === 'sign_up' ? 'Sign Up' : 'Sign In'}
         </Text>

@@ -1,5 +1,5 @@
-import { View, FlatList, Text, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { FlatList, Image, Text, View } from 'react-native';
 
 // Preload doctor images
 const doctorImages = [
@@ -12,7 +12,7 @@ const doctorImages = [
 type DoctorsCardProps = {
   imageIndex: number;
   name: string;
-  startRating:anumber;
+  startRating: number;
   profession: string;
   distance: number;
 };

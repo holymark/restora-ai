@@ -3,10 +3,10 @@ import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 
 // Preload medicine images
 const medicineImages = [
-  require('@/assets/medicine/medicine1.png'),
-  require('@/assets/medicine/medicine2.png'),
-  require('@/assets/medicine/medicine3.png'),
-  require('@/assets/medicine/medicine4.png'),
+  require('@/assets/images/medicine/medicine1.png'),
+  require('@/assets/images/medicine/medicine2.png'),
+  require('@/assets/images/medicine/medicine3.png'),
+  require('@/assets/images/medicine/medicine4.png'),
 ];
 
 type CartItemProp = {
